@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <meta charset="UTF-8">
+    <title>Uygulamaya yönlendiriliyor...</title>
+
+    <script>
+        const path = window.location.pathname;
+
+        // Koleksiyon ID'yi al
+        const parts = path.split('/');
+        const id = parts[2];
+
+        // App varsa açmayı dene
+        window.location.href = "https://haticeeakgull.github.io" + path;
+
+        // App yoksa → Play Store'a yönlendir
+        setTimeout(() => {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.example.ugrak_mekan_app";
+        }, 2000);
+    </script>
+</head>
+
 <body>
-    Deep link test
+    <h2>Uygulamaya yönlendiriliyorsun...</h2>
 </body>
 
 </html>
