@@ -3,22 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Uygulamaya yönlendiriliyor...</title>
+    <title>Ugrak</title>
 
     <script>
-        const path = window.location.pathname;
+        const hash = window.location.hash;
 
-        // Koleksiyon ID'yi al
-        const parts = path.split('/');
-        const id = parts[2];
+        if (hash.includes("/koleksiyon/")) {
+            const id = hash.split("/")[2];
 
-        // App varsa açmayı dene
-        window.location.href = "https://haticeeakgull.github.io" + path;
+            // App açmayı dene
+            window.location.href = "https://haticeeakgull.github.io/koleksiyon/" + id;
 
-        // App yoksa → Play Store'a yönlendir
-        setTimeout(() => {
-            window.location.href = "https://play.google.com/store/apps/details?id=com.example.ugrak_mekan_app";
-        }, 2000);
+            // App yoksa Play Store
+            setTimeout(() => {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.example.ugrak_mekan_app";
+            }, 2000);
+        }
     </script>
 </head>
 
