@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.example.ugrak_mekan_app",
+            "sha256_cert_fingerprints": [
+                "34:CF:5D:71:C7:96:2F:AF:C1:1A:A0:D3:1F:5A:77:6B:56:04:08:A8:ED:C7:56:4E:CA:2D:32:5C:3F:F3:62:AA"
+            ]
+        }
+    }
+]
