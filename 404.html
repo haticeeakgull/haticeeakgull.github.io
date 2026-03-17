@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <script type="text/javascript">
-        // Mevcut yolu (örn: /ugrak-web/koleksiyon/123) al ve index.html'e bir parametre olarak gönder
-        var pathName = window.location.pathname;
-        window.location.replace("https://haticeeakgull.github.io/ugrak-web/?path=" + encodeURIComponent(pathName));
+        // Örn: /ugrak-web/koleksiyon/550e8400-e29b-41d4...
+        var segmentler = window.location.pathname.split('/');
+        var id = segmentler[segmentler.length - 1]; // En sondaki ID'yi al
+
+        // Kullanıcıyı ana sayfaya yönlendir ve ID'yi parametre olarak ekle
+        // Bu sayede GitHub 404 vermeyi bırakır, index.html açılır
+        window.location.replace("https://haticeeakgull.github.io/ugrak-web/?koleksiyonId=" + id);
     </script>
 </head>
 
 <body>
-    Yönlendiriliyorsunuz...
+    Uygulamaya ve içeriğe yönlendiriliyorsunuz...
 </body>
 
 </html>
