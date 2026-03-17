@@ -3,19 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Redirecting...</title>
-
-    <script>
-        // Gelen path'i al
-        var path = window.location.pathname;
-
-        // Ana sayfaya yönlendir ama path'i koru
-        window.location.replace("/#" + path);
+    <script type="text/javascript">
+        // Mevcut yolu (örn: /ugrak-web/koleksiyon/123) al ve index.html'e bir parametre olarak gönder
+        var pathName = window.location.pathname;
+        window.location.replace("https://haticeeakgull.github.io/ugrak-web/?path=" + encodeURIComponent(pathName));
     </script>
 </head>
 
 <body>
-    <h2>Yönlendiriliyor...</h2>
+    Yönlendiriliyorsunuz...
 </body>
 
 </html>

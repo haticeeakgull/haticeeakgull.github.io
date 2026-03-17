@@ -1,29 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
-    <title>Ugrak</title>
-
-    <script>
-        const hash = window.location.hash;
-
-        if (hash.includes("/koleksiyon/")) {
-            const id = hash.split("/")[2];
-
-            // App açmayı dene
-            window.location.href = "https://haticeeakgull.github.io/koleksiyon/" + id;
-
-            // App yoksa Play Store
-            setTimeout(() => {
-                window.location.href = "https://play.google.com/store/apps/details?id=com.example.ugrak_mekan_app";
-            }, 2000);
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uğrak - Paylaşılan Koleksiyon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
         }
-    </script>
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ff5722;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: #ff5722;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e64a19;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
 </head>
 
 <body>
-    <h2>Uygulamaya yönlendiriliyorsun...</h2>
+    <div class="card">
+        <div class="icon">☕</div>
+        <h1>Bir Koleksiyon Paylaşıldı!</h1>
+        <p>Arkadaşının senin için seçtiği en iyi mekanları görmek ve yeni rotalar keşfetmek için Uğrak uygulamasını aç.
+        </p>
+
+        <a href="intent://haticeeakgull.github.io/ugrak-web/koleksiyon/#Intent;scheme=https;package=com.example.ugrak_mekan_app;end"
+            class="btn">Koleksiyonu Gör</a>
+
+        <div class="footer">Uygulama yüklü değilse indirme sayfasına yönlendirileceksiniz.</div>
+    </div>
+
+    <script>
+        // Sayfa yüklendiğinde linkten ID'yi alıp özel bir işlem yapmak istersen burayı kullanabilirsin
+        const urlParams = new URLSearchParams(window.location.hash.replace('#', '?'));
+        const koleksiyonId = window.location.pathname.split('/').pop();
+        console.log("Koleksiyon ID:", koleksiyonId);
+    </script>
 </body>
 
 </html>
